@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 import random
-from utils import *
+from utils.utils_cipher import *
 
 # Script de chiffrement en playfair
 

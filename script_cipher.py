@@ -1,5 +1,5 @@
-from utils import *
-from cipher import *
+from utils.utils_cipher import *
+from utils.cipher import *
 
 grid = get_grid()
 # print(grid)

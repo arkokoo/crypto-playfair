@@ -8,26 +8,6 @@ load_dotenv()
 # Récupération des variables d'environnement
 grid_file_path = os.getenv("GRID_5x5_FILE_PATH")
 
-def generate_random_letter() -> str:
-
-    # Fonction de génération d'une lettre aléatoire parmi les 25 lettres de la grille
-    # Permet d'ajouter une nulle dans la string chiffrée
-
-    grid_letters = get_grid_letters()
-    random_int = random.randint(0,24)
-    return grid_letters[random_int]
-
-def get_grid_letters() -> str:
-
-    # Fonction de récupération de la grille sous forme de string
-
-    grid_file = open(grid_file_path, "r")
-    lines = grid_file.readlines()
-    grid_file.close()
-    grid_letters = ""
-    for line in lines:
-        grid_letters = grid_letters + line.replace("\n", "")
-    return grid_letters
 
 def get_grid() -> list[list[str]]:
 
@@ -44,6 +24,27 @@ def get_grid() -> list[list[str]]:
             char_list.append(char)
         grid.append(char_list)
     return grid
+
+def get_grid_letters() -> str:
+
+    # Fonction de récupération de la grille sous forme de string
+
+    grid_file = open(grid_file_path, "r")
+    lines = grid_file.readlines()
+    grid_file.close()
+    grid_letters = ""
+    for line in lines:
+        grid_letters = grid_letters + line.replace("\n", "")
+    return grid_letters
+
+def generate_random_letter() -> str:
+
+    # Fonction de génération d'une lettre aléatoire parmi les 25 lettres de la grille
+    # Permet d'ajouter une nulle dans la string chiffrée
+
+    grid_letters = get_grid_letters()
+    random_int = random.randint(0,24)
+    return grid_letters[random_int]
 
 def string_formatter(string_param: str) -> str:
 
